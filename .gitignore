@@ -1,3 +1,5 @@
-.git
-vim/vundle.git
-vimperator/*
+# ignore
+
+.git/
+.gitmodules
+vim/vundle.git/

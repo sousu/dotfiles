@@ -57,8 +57,8 @@ else
     "Bundle 'sousu/neco-googlesuggest'
 endif
 " ---
-Bundle 'sousu/previm'
-Bundle 'sousu/VimRepress'
+"Bundle 'sousu/previm'
+"Bundle 'sousu/VimRepress'
 Bundle 'sousu/sousu-misc-settings'
 Bundle 'sousu/buftabs'
 
