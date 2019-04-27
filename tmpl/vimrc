@@ -1,0 +1,16 @@
+" --- --- --- ---
+" .vimrc local setting for XXXXX
+" --- --- --- ---
+
+if filereadable(expand('~/dotfiles/vim/.vimrc'))
+  source ~/dotfiles/vim/.vimrc
+endif
+
+"
+" 1. mkdir ~/.vim/vimtmp
+"    mkdir ~/.vim/bundle
+" 2. copy colorscheme
+"
+"
+
+

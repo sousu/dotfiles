@@ -1,0 +1,169 @@
+# --- --- --- ---
+# nya 共通設定ファイル
+# --- --- --- ---
+
+echo 
+echo === nya config load started! ===
+
+# --- 環境変数 ---
+set TAGJUMP=tagjump.vbs
+
+# --- 基本option ---
+option prompt $e[34;40;1m[$p]$ $e[37;1m
+option uncompletechar ,;=
+option tilde   on
+option history on
+option savehist %HOME%/_nya_history
+option backquote  on
+option +keep_bottom_line
+# option +standalone
+option nullcomplete  on
+if $standalone = (set) then
+    foreach i ( dir mkdir rmdir )
+        alias $i $COMSPEC /c $i
+    end
+endif
+
+# --- suffix ---
+suffix ny %nyatype% -f
+suffix pl perl
+suffix rb ruby
+suffix jar java -jar
+suffix awk awk -f
+suffix vbs cscript
+suffix js  cscript
+suffix xls explorer
+suffix doc explorer
+
+# --- bindkey ---
+# bindkey CTRL_P backward-char
+# bindkey CTRL_N vzlike-next-history
+
+# --- alias ---
+# base 
+less{
+    nkf -s $* | less.exe -q
+}
+more{
+    nkf -s $* | less.exe -q
+}
+alias rm "rm -i"
+alias cp "cp -i"
+alias rm "rm -i"
+alias ll "ls -al | less -RXr"
+alias ls "ls -a"
+alias watch "watch --differences"
+alias nkfo "nkf --overwrite"
+alias nkfg "nkf --guess"
+gh{
+    cat ~/_nya_history | grep $*
+}
+# cd 
+alias cdb cd "~/bin"
+alias cdc cd "~/conf"
+alias cdt cd "/tmp"
+alias cdd cd "~/dotfiles"
+alias cde cd "~/develop"
+alias cdr cd "~/Dropbox"
+alias cdn cd "~/Dropbox/tools/blog/_posts"
+# nyaos
+alias sb "source ~/_nya"
+alias eb  "vim ~/_nya"
+alias ebm "vim ~/dotfiles/nya/_nya"
+# dos_cmd
+alias e       explorer
+alias find    ~/bin/wbin/find.exe
+ex{
+    ~/bin/dos_cmds/ex.bat
+}
+alias psf     "pslist.exe -t | less"
+alias pkill   pskill.exe
+alias mecab   ~/bin/MeCab/bin/mecab.exe
+alias ln      ~/bin/symlink/ln.exe
+alias curl    ~/bin/curl/curl.exe
+alias convert ~/bin/ImageMagick/convert.exe
+
+
+# --- ---
+# Mercurial
+hgh{
+    hg help -v $1 | less
+}
+hgs{
+    echo === summary ========
+    hg summary
+    echo 
+    echo === log ============
+    hg log -l 4
+    echo 
+    echo === status =========
+    hg status
+}
+hgu{
+    hg pull 
+    echo -- 
+    hg update
+}
+hgp{
+    hg push
+}
+alias hgc hg commit -usousu
+alias hga hg add
+
+# Git
+alias g git
+gth{
+    git help $1 | less
+}
+gts{ 
+    echo === summary ========
+    git log -n1 | nkf -s
+    echo 
+    echo === log ============
+    git log -n 10 --color --graph --decorate --oneline | nkf -s
+    echo 
+    echo === status =========
+    git status 
+}
+gtu{
+    git pull
+}
+gtc{
+    git commit -a $*
+}
+gtp{
+    git push origin
+}
+
+# --- 自動起動 --- 
+date 
+echo COMPUTERNAME: %COMPUTERNAME%
+
+if %COMPUTERNAME% == %COMP_OFFICE% then
+    # setting for office
+    echo load config... [office]
+    source ~/conf/office_nyaos
+endif
+
+if %COMPUTERNAME% == %COMP_MAC% then
+    # setting for office
+    echo load config... [mac(Bootcamp)]
+    source ~/conf/mac_nyaos
+endif
+
+if %COMPUTERNAME% == %COMP_HOME% then
+    # setting for home 
+    echo load config... [home]
+    source ~/conf/home_nyaos
+endif
+
+if %COMPUTERNAME% == %COMP_XPS% then
+    # setting for home 
+    echo load config... [XPS]
+    source ~/conf/xps_nyaos
+endif
+
+# --- 完了報告 ---
+echo === nya config load complete! ===
+echo 
+

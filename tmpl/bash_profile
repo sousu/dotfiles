@@ -1,0 +1,14 @@
+# --- --- --- ---
+# .bash_profile local settig for XXX
+# --- --- --- ---
+
+# --- base file load ---
+if [ -f ~/dotfiles/bash/.bash_profile ]; then
+	. ~/dotfiles/bash/.bash_profile
+fi
+
+#export HISTSIZE=100000
+#export PATH=$PATH:/usr/local/bin
+
+#screen -r
+#[ $? -eq 1 ] && [ -z "$SSH_CONNECTION" ] && screen

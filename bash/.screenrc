@@ -1,0 +1,39 @@
+
+# --- base --- 
+escape ^Jj
+autodetach on
+bell_msg "^G"
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+defscrollback 100
+startup_message off
+vbell off
+msgminwait 0 
+shelltitle "$ |bash"
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+term xterm-256color
+
+# --- caption/hardstatus --- 
+#  %? %: %? 挟まれたどっちかを表示
+#  %-w %+w 前後windowの表示
+#  %{-} 色設定を前に戻す
+#
+
+# caption always "%{= bw} %{= kb} %-w%{b kw}%n %t%{-}%+w %{-} %= %{=b kg} ♪%` %{=b kb} %y/%m/%d %{=b km}%c %{= bw} "
+# caption always "%{= bw} %{= kb} %-w%{b kw}%n %t%{-}%+w %{-} %= %{=b kg}%{=b kb} %y/%m/%d %{=b km}%c %{= bw} "
+caption always "%{= kw} %{= kb} %-w%{b kw}%n %t%{-}%+w %{-} %= %{=b kg}%{=b kb} %y/%m/%d %{=b km}%c %{= kw} "
+# hardstatus alwayslastline "%{= kw} %=%{=b kg}%` %{=b kb}%y/%m/%d %{=b km}%c "
+backtick 0 0 0 tail -f /tmp/mp3info
+
+# --- keybind --- 
+bind n screen
+bind h prev
+bind j next
+bind l windowlist
+bind r eval 'echo "Resize window"' 'command -c resize'
+bind -c resize ^] command
+bind -c resize j eval 'resize +1' 'command -c resize'
+bind -c resize k eval 'resize -1' 'command -c resize'
+
+
