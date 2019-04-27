@@ -63,7 +63,6 @@ Vimを起動してvundleからplugin等インストール
 
 
 ## License 
-----------------
 Copyright &copy; 2012 sousu
 Licensed under the [Apache License, Version 2.0][Apache]
  

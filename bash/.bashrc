@@ -29,6 +29,7 @@ shopt -s histappend
 
 # --- alias ---
 # 基本設定
+alias ls='ls -F -G'
 alias less='less -R'
 alias more='less'
 alias mroe='less'
@@ -158,40 +159,24 @@ alias gtR="git rm"
 
 # --- パッケージ管理 ---
 # mac-ports 
-port-v(){ pushd /opt/svn/dports && sudo svn cleanup && sudo svn update && popd ;}
-port-u(){ sudo port -d sync && sudo port upgrade outdated && sudo port -u uninstall ;}
-port-U(){ port-v && port-u ;}
-port-i(){ sudo port -d install $* ;}
-port-I(){ sudo port -d installed | less ;}
-port-s(){ sudo port search $* | less ;}
-port-g(){ sudo port -d upgrade $* ;}
-port-r(){ sudo port -d uninstall $* ;}
-port-l(){ sudo port list | less ;}
-port-V(){ sudo port variants $* ;}
+portv(){ pushd /opt/svn/dports && sudo svn cleanup && sudo svn update && popd ;}
+portu(){ sudo port -d sync && sudo port upgrade outdated && sudo port -u uninstall ;}
+portU(){ port-v && port-u ;}
+porti(){ sudo port -d install $* ;}
+portI(){ sudo port -d installed | less ;}
+ports(){ sudo port search $* | less ;}
+portg(){ sudo port -d upgrade $* ;}
+portr(){ sudo port -d uninstall $* ;}
+portl(){ sudo port list | less ;}
+portV(){ sudo port variants $* ;}
 # porg
 alias porg_install='porg -lD make install'
 alias porg_list='porg -adsF'
 porg_del(){ porg -r "`basename $(pwd)`" ;}
 porg_reinstall(){ porg -r "`basename $(pwd)`" && porg -lD make install ;}
-# yum
-alias yum-i="yum install"
-alias yum-s="yum search"
-alias yum-p="yum provides"
-alias yum-r="yum remove"
-alias yum-l="yum list"
-alias yum-L="yum list installed | less"
-alias yumdag-l="yum --enablerepo=dag list"
-alias yumdag-s="yum --enablerepo=dag search"
-alias yumdag-i="yum --enablerepo=dag install"
 # apt
-apt-ar(){ sudo apt-get autoremove $1 ;}
-apt-r(){  sudo apt-get remove $1 ;}
-apt-ug(){ sudo apt-get upgrade ;}
-apt-ud(){ sudo apt-get update ;}
-apt-t(){  sudo apt-get update     && sudo apt-get upgrade  && \
-          sudo apt-get autoremove && sudo apt-get clean ;}
-apt-i(){  sudo apt-get install $1  ;}
-apt-s(){  sudo apt-cache search $1 | grep $1 ;}
-apt-sh(){ sudo apt-cache show $1 | less ;}
+alias a="sudo apt"
+aall(){  sudo apt-get update     && sudo apt-get upgrade  && \
+         sudo apt-get autoremove && sudo apt-get clean ;}
 
 
