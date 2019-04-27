@@ -4,9 +4,14 @@ dotfiles
 
 自分用のdotfile集
 
-# 導入
+## 導入
 
-sshキーを準備する
+HTTPS時
+
+    git https://sousu@github.com/sousu/dotfiles.git
+    git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
+
+SSH時／sshキーを準備する
  
     ssh-keygen -r rsa
 
@@ -20,14 +25,15 @@ pubキーを登録したら,ssh/configに追記する
         TCPKeepAlive yes
         IdentitiesOnly yes
 
-cloneする,vundleも取り込む
+clone,vundleも取り込む
 
     git clone git@github.com:sousu/dotfiles.git
     git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
 
-# 個別設定
 
-## Bash
+## 個別設定
+
+### Bash
 
 シンボリックでの設定の場合
 
@@ -44,7 +50,7 @@ Screen他の準備
     ln -s ~/dotfiles/bash/.screenrc ~/.screenrc
     ln -s ~/dotfiles/bash/.dir_colors ~/.dir_colors
 
-## Vim
+### Vim
 
 vimrc及び関連フォルダの準備
 
@@ -55,29 +61,8 @@ Vimを起動してvundleからplugin等インストール
 
     :BundleInstall
 
-VimRepress関係の設定
 
-    vim ~/.vimpressrc
-
-    [mydomain.jp]
-    blog_url = http://mydomain.jp/wordpress/
-    username = user
-    password = XXXXX
-
-
-## Vimperator
-
-vimperatorrcを準備
-
-    ln -s ~/dotfiles/vimperator/.vimperatorrc ~/.vimperatorrc
-
-colorschemeやpluginをコピーする
-
-    mkdir -p ~/.vimperator/colors ~/.vimperator/plugin
-    cp -r ~/dotfiles/vimperator/colors/* ~/.vimperator/colors/
-    cp -r ~/dotfiles/vimperator/plugin/* ~/.vimperator/plugin/
-
-# License 
+## License 
 ----------------
 Copyright &copy; 2012 sousu
 Licensed under the [Apache License, Version 2.0][Apache]
