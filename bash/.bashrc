@@ -176,7 +176,7 @@ porg_del(){ porg -r "`basename $(pwd)`" ;}
 porg_reinstall(){ porg -r "`basename $(pwd)`" && porg -lD make install ;}
 # apt
 alias a="sudo apt"
-aall(){  sudo apt-get update     && sudo apt-get upgrade  && \
-         sudo apt-get autoremove && sudo apt-get clean ;}
+au(){  sudo apt-get update     && sudo apt-get upgrade  && \
+       sudo apt-get autoremove && sudo apt-get clean ;}
 
 
