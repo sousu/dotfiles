@@ -8,7 +8,7 @@ dotfiles
 
 HTTPS時
 
-    git https://sousu@github.com/sousu/dotfiles.git
+    git clone https://sousu@github.com/sousu/dotfiles.git
     git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
 
 SSH時／sshキーを準備する
