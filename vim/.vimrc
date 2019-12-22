@@ -56,7 +56,6 @@ else
     "Bundle 'sousu/neco-look'
     "Bundle 'sousu/neco-googlesuggest'
 endif
-" ---
 "Bundle 'sousu/previm'
 "Bundle 'sousu/VimRepress'
 Bundle 'sousu/sousu-misc-settings'
@@ -221,15 +220,8 @@ nmap W  <C-W>1+
 " 前回位置を記憶の上マークへの移動
 nmap <space> `
 nmap ,m <ESC>:marks<CR>
-" 検索時に結果が中央に来るようにする
-"nmap n nzz
-"nmap N Nzz
-"nmap * *zz
-"nmap # #zz
-"nmap g* g*zz
-"nmap g# g#zz
 " Escの2回押しでハイライト消去
-" nmap <ESC><ESC> :nohlsearch<CR><ESC>
+"nmap <ESC><ESC> :nohlsearch<CR><ESC>
 " 括弧挿入
 inoremap {} {}<LEFT>
 inoremap [] []<LEFT>
@@ -266,13 +258,6 @@ nnoremap q <Nop>
 nnoremap qq q
 " バックアップフォルダ読出
 nmap ,b :e $BASEPATH/vimtmp<CR>
-
-" ruby
-if has('win32') || has('win64') 
-  autocmd FileType ruby nmap rr <ESC>:wall!<ESC>:!ruby % --use-color 
-else
-  autocmd FileType ruby nmap rr <ESC>:wall!<ESC>:!ruby % --notify 
-endif
 
 " ============================================
 " For plugin --- 
@@ -336,7 +321,6 @@ let g:neocomplcache_min_syntax_length = 3
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
 \   'default' : '',
-\   'ruby' : $BASEPATH.'/dict/ruby',
 \   'markdown' : $BASEPATH.'/dict/markdown'
 \}
 let g:neocomplcache_snippets_dir = $BASEPATH.'/snippets'
@@ -361,8 +345,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " SuperTab like snippets behavior. <CR>: close popup and save indent.
 let g:neocomplcache_enable_auto_select = 0  "最初の候補を選択
@@ -441,8 +423,6 @@ function! s:unite_my_settings()
   " ESCキー押すと終了
   imap <silent><buffer> <ESC> <C-u><C-h>
 endfunction
-
-" --- neco-look ---
 
 " --- yankring ---
 let g:yankring_history_dir=$BASEPATH . '/vimtmp'
