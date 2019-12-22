@@ -10,41 +10,30 @@ fi
 # 環境変数
 PATH=$PATH:$HOME/bin:.
 
-# pronpt 
-# - ( \033k\033\\ ) はscreen関係の設定
-
-# PS1="\033k\033\\ \u:\w\[\033[30m\]:$ \[\e[0m\]" 
-# PS1="\`if [ \$? = 0 ];then echo \"\[\e[36m\]\!\[\e[0m\]\"; \
-#     else echo \"\[\e[33m\]\!\[\e[0m\]\";fi\`\033k\033\\ \u:\w\[\033[34m\]:$ \[\e[0m\]"
 PS1="[\[\033[32m\]\!\[\033[0m\] \u@\h\[\033[34m\]:\[\033[0m\]\[\033[36m\]\w\[\033[0m\]]$ "
 
-# history端末間共有のための設定
+# 履歴の端末間共有設定
 function share_history {
     history -a  # 1行追記
-    history -c  # 端末localの履歴を一旦消去
+    history -c  # 端末localの履歴一旦消去
     history -r  # 履歴再読み込み
 }
-PROMPT_COMMAND='share_history' # 毎度実行
+PROMPT_COMMAND='share_history' #都度実行
 shopt -s histappend
 
 # --- alias ---
-# 基本設定
 alias ls='ls -F -G'
 alias less='less -R'
 alias more='less'
 alias mroe='less'
-alias rm='rm -i'
 alias cp='cp -i'
 alias rm='rm -i'
 alias ll='ls -al -h | less -RXr'
-alias emacs='emacs -nw'
 alias gh='history|grep'
 alias watch='watch --differences'
 alias nkfo='nkf --overwrite'
-alias nkfg='nkf --guess'
-alias ex='open .' # for OSX
+alias ex='open .' #OSX
 alias psf='ps -e uxf | less -S'
-#alias sc='screen -r sousu || screen -S sousu'
 alias sc='screen'
 alias top='htop'
 # cd 
@@ -53,65 +42,51 @@ alias cdd="cd ~/dotfiles"
 alias cde="cd ~/develop"
 alias cdv="cd ~/.vim"
 alias cdc="cd ~/conf"
-alias cdvimp="cd ~/.vimperator"
 alias cds="cd ~/share"
-alias cdr="cd ~/Dropbox"
-alias cdm="cd ~/Dropbox/memo"
 alias cdt="cd /tmp"
-alias cdn="cd ~/Dropbox/tools/blog"
-# Bash
+# bash
 alias sb='source ~/.bashrc'
+alias eb='vim ~/.bashrc'
 alias ebm='vim ~/dotfiles/bash/.bashrc'
 alias ebp='vim ~/.bash_profile'
-# Vim
+# vim
 alias v='vim'
 alias vi='vim'
-alias svim='sudo vim'
-alias eb='vim ~/.bashrc'
 alias ev='vim ~/.vimrc'
 alias evm='vim ~/dotfiles/vim/.vimrc'
 alias evd='vim ~/.vim/'
 alias evf='vim ~/.vim/ftplugin'
 alias evt='vim ~/.vim/vimtmp/'
-alias vir='vim ./*.rb'
-alias vic='vim ./*.conf'
 alias es='vim ~/.screenrc'
-alias vp='vim -c"call Vimpress()"'
-function vrefresh {
+function vf {
+    echo "Refresh vimtmp"
     find ~/.vim/vimtmp/ -regex '^.*[~=]$' -print0 | xargs -0 rm
 }
-function md { 
+# note
+function note { 
+    [ "$1" = "" ] && echo "input title" && return 0
     _date=`date +"%y%m%d"`
     _prefix="$_date - "
     _ext='.txt'
     _tmpl="<!-- vim: set ft=markdown: -->"
-    echo -e "\n\n\n$_tmpl" > "$_prefix$1$_ext"
+    echo -e "\n\n$_tmpl" > "$_prefix$1$_ext"
     vim "$_prefix$1$_ext"
 }
-# Vimperator
-alias evimp='vim ~/.vimperatorrc'
-alias evimpm='vim ~/dotfiles/vimperator/.vimperatorrc'
-alias evimpd='vim ~/.vimperator/'
-# screen
-alias es='vim ~/.screenrc'
 # grep
 alias grep='grep --color'
-# DropBox
-alias cdD='cd ~/Dropbox'
-alias vm='vim ~/Dropbox/memo/'
 
-# --- Util func ---
+# --- Util関数 ---
 function sep { 
     SEP=" "
     [ "$1" = "" ] && SEP="---"
-    echo -e "---$SEP$1$SEP--------------"
+    echo -e "---$SEP$1$SEP---"
 }
 function x {
     [ "$USER" = "sousu" ] && startx || su -c "startx" sousu
 }
 
 # --- Ver管理 ---
-# Mercurial(hg)
+# Mercurial
 function hgh {
     hg help -v $1 | less
 }
@@ -133,7 +108,7 @@ function hgd {
 alias hgc="hg commit -usousu"
 alias hga="hg add"
 alias hgr="hg revert"
-# Git
+# git
 alias g="git"
 function gth {
     git help $1 | less
@@ -153,27 +128,7 @@ alias gtp="git push origin"
 alias gtr="git rm --cached"
 alias gtR="git rm"
 
-# --- Ver管理(release) ---
-# function release_bash {
-# }
-
-# --- パッケージ管理 ---
-# mac-ports 
-portv(){ pushd /opt/svn/dports && sudo svn cleanup && sudo svn update && popd ;}
-portu(){ sudo port -d sync && sudo port upgrade outdated && sudo port -u uninstall ;}
-portU(){ port-v && port-u ;}
-porti(){ sudo port -d install $* ;}
-portI(){ sudo port -d installed | less ;}
-ports(){ sudo port search $* | less ;}
-portg(){ sudo port -d upgrade $* ;}
-portr(){ sudo port -d uninstall $* ;}
-portl(){ sudo port list | less ;}
-portV(){ sudo port variants $* ;}
-# porg
-alias porg_install='porg -lD make install'
-alias porg_list='porg -adsF'
-porg_del(){ porg -r "`basename $(pwd)`" ;}
-porg_reinstall(){ porg -r "`basename $(pwd)`" && porg -lD make install ;}
+# --- pkg管理 ---
 # apt
 alias a="sudo apt"
 au(){  sudo apt-get update     && sudo apt-get upgrade  && \
