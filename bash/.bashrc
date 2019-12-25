@@ -131,7 +131,9 @@ alias gtR="git rm"
 # --- pkgä«óù ---
 # apt
 alias a="sudo apt"
-au(){  sudo apt-get update     && sudo apt-get upgrade  && \
-       sudo apt-get autoremove && sudo apt-get clean ;}
+function au {  
+    sudo apt-get update     && sudo apt-get upgrade  && \
+    sudo apt-get autoremove && sudo apt-get clean;
+}
 
 
