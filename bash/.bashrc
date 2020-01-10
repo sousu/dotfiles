@@ -22,6 +22,7 @@ PROMPT_COMMAND='share_history' #ìsìxé¿çs
 shopt -s histappend
 
 # --- alias ---
+alias d='dstat -ta'
 alias ls='ls -F -G'
 alias less='less -R'
 alias more='less'
