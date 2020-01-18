@@ -116,6 +116,7 @@ function gth {
 }
 function gts { 
     sep "summary" && git log -n1
+    echo ""
     sep "log    " && git log --graph --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(black bold)%an, %ar%Creset' | head -n10
     echo ""
     sep "status " && git status -s
