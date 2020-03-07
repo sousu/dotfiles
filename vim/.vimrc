@@ -79,6 +79,7 @@ set nocompatible
 "バックアップを取る
 set backup
 set backupdir=$BASEPATH/vimtmp 
+set undodir=$BASEPATH/vimtmp
 "swapfileの作成位置を固定する
 set directory=$BASEPATH/vimtmp
 "起動時前回編集点にカーソルを動かす
