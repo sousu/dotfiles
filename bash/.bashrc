@@ -63,16 +63,6 @@ function vf {
     echo "Refresh vimtmp"
     find ~/.vim/vimtmp/ -regex '^.*[~=]$' -print0 | xargs -0 rm
 }
-# note
-function note { 
-    [ "$1" = "" ] && echo "input title" && return 0
-    _date=`date +"%y%m%d"`
-    _prefix="$_date - "
-    _ext='.txt'
-    _tmpl="<!-- vim: set ft=markdown: -->"
-    echo -e "\n\n$_tmpl" > "$_prefix$1$_ext"
-    vim "$_prefix$1$_ext"
-}
 # grep
 alias grep='grep --color'
 
