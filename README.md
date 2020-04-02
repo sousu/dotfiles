@@ -61,11 +61,3 @@ Vimを起動してvundleからplugin等インストール
 
     :BundleInstall
 
-
-## License 
-Copyright &copy; 2012 sousu
-Licensed under the [Apache License, Version 2.0][Apache]
- 
-[Apache]: http://www.apache.org/licenses/LICENSE-2.0
-
-
