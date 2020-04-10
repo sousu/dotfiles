@@ -6,7 +6,7 @@ dotfiles
 
 ## 導入
 
-HTTPS時
+HTTPS時／clone及びVundleの取込
 
     git clone https://sousu@github.com/sousu/dotfiles.git
     git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
@@ -25,7 +25,7 @@ pubキーを登録したら,ssh/configに追記する
         TCPKeepAlive yes
         IdentitiesOnly yes
 
-clone,vundleも取り込む
+clone／Vundleの取込
 
     git clone git@github.com:sousu/dotfiles.git
     git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
@@ -35,15 +35,15 @@ clone,vundleも取り込む
 
 ### Bash
 
+テンプレート取込で設定の場合
+
+    cp -p ~/dotfiles/tmpl/bashrc ~/.bashrc ; source ~/.bashrc
+    cp -p ~/dotfiles/tmpl/bash_profile ~/.bash_profile
+
 シンボリックでの設定の場合
 
     rm ~/.bashrc ; ln -s ~/dotfiles/bash/.bashrc ~/.bashrc ; source ~/.bashrc
     rm ~/.bash_profile ; ln -s ~/dotfiles/bash/.bash_profile ~/.bash_profile
-
-ローカルの設定を行う場合は，テンプレートで取り込む
-
-    cp -p ~/dotfiles/tmpl/bashrc ~/.bashrc ; source ~/.bashrc
-    cp -p ~/dotfiles/tmpl/bash_profile ~/.bash_profile
 
 Screen他の準備
 
@@ -57,7 +57,15 @@ vimrc及び関連フォルダの準備
     ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
     mkdir -p ~/.vim/vimtmp ~/.vim/bundle
 
-Vimを起動してvundleからplugin等インストール
+Vimを起動してVundleからplugin等インストール
 
     :BundleInstall
+
+### Git
+
+ユーザ／メール設定
+
+    git config --global user.name XXX
+    git config --global user.email XXX@XXX.jp
+
 
