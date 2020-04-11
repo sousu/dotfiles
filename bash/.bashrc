@@ -124,8 +124,9 @@ alias gtR="git rm"
 # apt
 alias a="sudo apt"
 function au {  
-    sep "update & upgrade" && sudo apt-get update && sudo apt-get upgrade  && \
+    sep "update & upgrade" && sudo apt-get update && sudo apt-get upgrade 
     sep "autoremove & clean" && sudo apt-get autoremove && sudo apt-get clean
+    sep "dist-upgrade" && sudo apt-get dist-upgrade
     echo ""
 }
 
