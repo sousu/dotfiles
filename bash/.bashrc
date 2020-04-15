@@ -76,6 +76,26 @@ function x {
     [ "$USER" = "sousu" ] && startx || su -c "startx" sousu
 }
 
+# --- Linuxä«óù ---
+function svs {
+    cmd="systemctl list-unit-files --type=service"
+    case $1 in
+        "l") $cmd ;;
+        "a") $cmd | sed -r 's/^(.+?)\.service.+$/\1/' | awk '{printf " %s |",$1}'; echo ;;
+        *)   $cmd | grep enable | sed -r 's/^(.+?)\.service.+$/\1/' | awk '{printf " %s |",$1}'; echo ;;
+    esac
+}
+function sts {
+    systemctl status $1
+}
+function res {
+    [ "$1" = "" ] && return
+    systemctl stop $1
+    sleep 1
+    systemctl start $1
+    systemctl status $1
+}
+
 # --- Verä«óù ---
 # Mercurial
 function hgh {
