@@ -77,6 +77,7 @@ function x {
 }
 
 # --- Linuxä«óù ---
+alias s='systemctl'
 function svs {
     cmd="systemctl list-unit-files --type=service"
     case $1 in
