@@ -24,7 +24,7 @@ shopt -s histappend
 # --- alias ---
 alias d='dstat -ta'
 alias ls='ls -F -G --color'
-alias less='less -R'
+alias less='less -R -X'
 alias more='less'
 alias mroe='less'
 alias cp='cp -i'
