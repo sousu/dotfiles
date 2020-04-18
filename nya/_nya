@@ -42,10 +42,10 @@ suffix doc explorer
 # --- alias ---
 # base 
 less{
-    nkf -s $* | less.exe -q
+    nkf -s $* | less -q -X
 }
 more{
-    nkf -s $* | less.exe -q
+    nkf -s $* | less -q -X
 }
 alias rm "rm -i"
 alias cp "cp -i"
