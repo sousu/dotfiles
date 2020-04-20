@@ -23,6 +23,7 @@ shopt -s histappend
 
 # --- alias ---
 alias d='dstat -ta'
+alias t='hddtemp 2>/dev/null'
 alias ls='ls -F -G --color'
 alias less='less -R -X'
 alias more='less'
@@ -77,7 +78,10 @@ function x {
 }
 
 # --- Linuxä«óù ---
-alias s='systemctl'
+function s {
+    systemctl $1 $2
+    systemctl status $2
+}
 function svs {
     cmd="systemctl list-unit-files --type=service"
     case $1 in
