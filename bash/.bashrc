@@ -79,7 +79,7 @@ function x {
 
 # --- LinuxŠÇ— ---
 function s {
-    [ "$1" = "" ] && return
+    [ "$1" = "" ] || [ "$2" = "" ] && return
     systemctl $1 $2
     systemctl status $2
 }
