@@ -126,7 +126,7 @@ syntax on
 "行番号を表示する
 set number
 "移動幅（オートインデント等の挿入する見た目の文字数）
-set shiftwidth=4
+set shiftwidth=2
 "閉じ括弧が入力されたとき、対応する括弧を表示する
 set showmatch
 set matchtime=1
