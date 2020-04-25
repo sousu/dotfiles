@@ -2,6 +2,11 @@
 # .bashrc master
 # --- --- ---  ---
 
+# --- confirm ---
+\w
+\df -Th | sed -e '1d'
+\echo ""
+
 # --- base ---
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
