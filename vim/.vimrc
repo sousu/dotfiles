@@ -24,24 +24,24 @@ Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neomru.vim'
-Bundle 'thinca/vim-quickrun'
-Bundle 'tyru/open-browser.vim'
-Bundle 'mattn/mkdpreview-vim'
-Bundle 'mattn/webapi-vim'
 Bundle 'h1mesuke/vim-alignta'
-Bundle 'rgarver/Kwbd.vim'
-Bundle 'basyura/jslint.vim'
-"Bundle 'yuratomo/w3m.vim'
 Bundle 'vim-scripts/YankRing.vim'
-"Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/BufOnly.vim'
 Bundle 'osyo-manga/vim-anzu'
 Bundle 'tyru/restart.vim'
-Bundle 'koron/codic-vim'
-Bundle 'vobornik/vim-mql4'
+"Bundle 'thinca/vim-quickrun'
+"Bundle 'tyru/open-browser.vim'
+"Bundle 'mattn/mkdpreview-vim'
+"Bundle 'mattn/webapi-vim'
+"Bundle 'rgarver/Kwbd.vim'
+"Bundle 'basyura/jslint.vim'
+"Bundle 'yuratomo/w3m.vim'
+"Bundle 'vim-scripts/taglist.vim'
+"Bundle 'koron/codic-vim'
+"Bundle 'rhysd/clever-f.vim' 
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rhysd/clever-f.vim' 
+Bundle 'leafgarland/typescript-vim'
 Bundle 'ruby.vim'
 Bundle 'savevers.vim'
 Bundle 'surround.vim'
@@ -264,12 +264,12 @@ nmap ,b :e $BASEPATH/vimtmp<CR>
 " For plugin --- 
 " --------------------------------------------
 " --- jslint ---
-autocmd FileType javascript call s:javascript_filetype_settings()
-function! s:javascript_filetype_settings()
-  "ifenautocmd BufLeave     <buffer> call jslint#clear()
-  "ifenautocmd BufWritePost <buffer> call jslint#check()
-  "ifenautocmd CursorMoved  <buffer> call jslint#message()
-endfunction
+"autocmd FileType javascript call s:javascript_filetype_settings()
+"function! s:javascript_filetype_settings()
+"  "ifenautocmd BufLeave     <buffer> call jslint#clear()
+"  "ifenautocmd BufWritePost <buffer> call jslint#check()
+"  "ifenautocmd CursorMoved  <buffer> call jslint#message()
+"endfunction
 
 " --- yanktmp ---
 let g:yanktmp_file = $BASEPATH . '/vimtmp/.__yanktmp__'
@@ -288,14 +288,14 @@ map <silent> sP <ESC>:call YanktmpPaste_P()<CR>
 "nmap ,w <ESC>:BlogSave 
 
 " --- quickrun.vim --- 
-let g:quickrun_config = {
-\   '*': {
-\      'hook/shebang/enable': 0,
-\      'outputter/error/error'   : 'quickfix',
-\      'outputter/buffer/close_on_empty' : 1,
-\   },
-\}
-set splitbelow
+"let g:quickrun_config = {
+"\   '*': {
+"\      'hook/shebang/enable': 0,
+"\      'outputter/error/error'   : 'quickfix',
+"\      'outputter/buffer/close_on_empty' : 1,
+"\   },
+"\}
+"set splitbelow
 
 " --- savevers.vim --- 
 set patchmode=.back
@@ -450,10 +450,10 @@ let g:buftabs_only_basename=1 "ファイル名だけ表示
 let g:buftabs_active_highlight_group="Visual"
 
 " --- codic-vim ---
-nmap .c :Codic 
+"nmap .c :Codic 
 
 " --- googlesuggest --- 
-let g:googlesuggest_language = 'en'
+"let g:googlesuggest_language = 'en'
 
 " --- go-lang ---
 if !exists('g:neocomplete#omni_patterns')
