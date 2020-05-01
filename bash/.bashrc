@@ -4,6 +4,7 @@
 
 # --- confirm ---
 \w
+\echo ""
 \df -Th | sed -e '1d'
 \echo ""
 
