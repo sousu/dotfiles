@@ -44,6 +44,7 @@ alias ex='open .' #OSX
 alias psf='ps -e uxf | less -S'
 alias sc='screen'
 alias top='htop'
+alias df='df -h'
 # cd 
 alias cdb="cd ~/bin"
 alias cdd="cd ~/dotfiles"
