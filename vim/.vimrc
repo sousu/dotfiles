@@ -59,7 +59,6 @@ endif
 "Bundle 'sousu/previm'
 "Bundle 'sousu/VimRepress'
 Bundle 'sousu/myvim'
-Bundle 'sousu/buftabs'
 
 " --- ---
 filetype plugin indent on "required!
