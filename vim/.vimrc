@@ -58,7 +58,7 @@ else
 endif
 "Bundle 'sousu/previm'
 "Bundle 'sousu/VimRepress'
-Bundle 'sousu/sousu-misc-settings'
+Bundle 'sousu/myvim'
 Bundle 'sousu/buftabs'
 
 " --- ---
