@@ -5,9 +5,6 @@
 echo 
 echo === nya config load started! ===
 
-# --- 環境変数 ---
-set TAGJUMP=tagjump.vbs
-
 # --- 基本option ---
 option prompt $e[34;40;1m[$p]$ $e[37;1m
 option uncompletechar ,;=
@@ -67,7 +64,7 @@ alias cde cd "~/develop"
 alias cdr cd "~/Dropbox"
 alias cdn cd "~/Dropbox/tools/blog/_posts"
 # nyaos
-alias sb "source ~/_nya"
+alias sb  "source ~/_nya"
 alias eb  "vim ~/_nya"
 alias ebm "vim ~/dotfiles/nya/_nya"
 # dos_cmd
@@ -82,7 +79,6 @@ alias mecab   ~/bin/MeCab/bin/mecab.exe
 alias ln      ~/bin/symlink/ln.exe
 alias curl    ~/bin/curl/curl.exe
 alias convert ~/bin/ImageMagick/convert.exe
-
 
 # --- ---
 # Mercurial
@@ -143,12 +139,6 @@ if %COMPUTERNAME% == %COMP_OFFICE% then
     # setting for office
     echo load config... [office]
     source ~/conf/office_nyaos
-endif
-
-if %COMPUTERNAME% == %COMP_MAC% then
-    # setting for office
-    echo load config... [mac(Bootcamp)]
-    source ~/conf/mac_nyaos
 endif
 
 if %COMPUTERNAME% == %COMP_HOME% then
