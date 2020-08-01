@@ -5,7 +5,7 @@
 # --- confirm ---
 \w
 \echo ""
-\df -Th | sed -e '1d'
+\df -Th | sed -e '1d' | grep -v "100%"
 \echo ""
 
 # --- base ---
