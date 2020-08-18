@@ -80,15 +80,13 @@ function sep {
     [ "$1" = "" ] && SEP="---"
     echo -e "---$SEP$1$SEP---"
 }
-function x {
-    [ "$USER" = "sousu" ] && startx || su -c "startx" sousu
-}
 
 # --- Linuxä«óù ---
+[ `whoami` = 'root' ] && DO="" || DO="sudo"
 function s {
     [ "$1" = "" ] || [ "$2" = "" ] && return
-    systemctl $1 $2
-    systemctl status $2
+    $DO systemctl $1 $2
+    $DO systemctl status $2
 }
 function svs {
     cmd="systemctl list-unit-files --type=service"
@@ -99,14 +97,14 @@ function svs {
     esac
 }
 function sts {
-    systemctl status $1
+    $DO systemctl status $1
 }
 function res {
     [ "$1" = "" ] && return
-    systemctl stop $1
+    $DO systemctl stop $1
     sleep 1
-    systemctl start $1
-    systemctl status $1
+    $DO systemctl start $1
+    $DO systemctl status $1
 }
 
 # --- Verä«óù ---
