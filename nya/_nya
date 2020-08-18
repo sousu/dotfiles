@@ -71,11 +71,10 @@ alias ebm "vim ~/dotfiles/nya/_nya"
 alias e       explorer
 alias find    ~/bin/wbin/find.exe
 ex{
-    ~/bin/dos_cmds/ex.bat
+    ~/bin/mycmds/ex.bat
 }
 alias psf     "pslist.exe -t | less"
 alias pkill   pskill.exe
-alias mecab   ~/bin/MeCab/bin/mecab.exe
 alias ln      ~/bin/symlink/ln.exe
 alias curl    ~/bin/curl/curl.exe
 alias convert ~/bin/ImageMagick/convert.exe
