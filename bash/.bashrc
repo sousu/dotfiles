@@ -30,7 +30,7 @@ shopt -s histappend
 # --- alias ---
 alias d='dstat -ta'
 alias t='hddtemp 2>/dev/null'
-alias ls='ls -F --color'
+alias ls='ls -F --color -a'
 alias less='less -RX'
 alias more='less'
 alias mroe='less'
