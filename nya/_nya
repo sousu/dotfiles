@@ -47,7 +47,7 @@ more{
 alias rm "rm -i"
 alias cp "cp -i"
 alias rm "rm -i"
-alias ll "ls -al | less -RXr"
+alias ll "ls -alh | less -RXr"
 alias ls "ls -a"
 alias watch "watch --differences"
 alias nkfo "nkf --overwrite"
