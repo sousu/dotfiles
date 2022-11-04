@@ -6,28 +6,9 @@ dotfiles
 
 ## 導入
 
-HTTPS時／clone及びVundleの取込
+Clone及びVundleの取込
 
-    git clone https://sousu@github.com/sousu/dotfiles.git
-    git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
-
-SSH時／sshキーを準備する
- 
-    ssh-keygen -r rsa
-
-pubキーを登録したら,ssh/configに追記する
-
-    Host github.com
-        User git
-        Port 22
-        Hostname github.com
-        IdentityFile ~/.ssh/id_git
-        TCPKeepAlive yes
-        IdentitiesOnly yes
-
-clone／Vundleの取込
-
-    git clone git@github.com:sousu/dotfiles.git
+    git clone https://github.com/sousu/dotfiles.git
     git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
 
 
