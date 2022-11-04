@@ -44,9 +44,11 @@ Vimを起動してVundleからplugin等インストール
 
 ### Git
 
-ユーザ／メール設定
+ユーザ／メール等設定
 
     git config --global user.name XXX
     git config --global user.email XXX@XXX.jp
+    git config --global credential.helper 'cache --timeout=2592000'
+
 
 
