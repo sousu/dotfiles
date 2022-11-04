@@ -183,6 +183,8 @@ autocmd BufEnter * execute ":lcd " . substitute(expand("%:p:h")," ","\\\\ ","g")
 set modelines=1
 "行幅
 set textwidth=0
+"ビープ音を消す
+set visualbell t_vb=
 
 " ============================================
 " View ---
