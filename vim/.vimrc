@@ -42,6 +42,7 @@ Bundle 'rgarver/Kwbd.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'tomtom/tcomment_vim'
 Bundle 'ruby.vim'
 Bundle 'savevers.vim'
 Bundle 'surround.vim'
@@ -183,8 +184,6 @@ autocmd BufEnter * execute ":lcd " . substitute(expand("%:p:h")," ","\\\\ ","g")
 set modelines=1
 "行幅
 set textwidth=0
-"ビープ音を消す
-set visualbell t_vb=
 
 " ============================================
 " View ---
