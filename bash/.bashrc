@@ -3,6 +3,7 @@
 # --- --- ---  ---
 
 # --- confirm ---
+\echo "---"
 \w
 \echo ""
 \df -Th | sed -e '1d' | grep -v "100%"
@@ -52,6 +53,7 @@ alias cde="cd ~/develop"
 alias cdv="cd ~/.vim"
 alias cdc="cd ~/conf"
 alias cds="cd ~/share"
+alias cdl="cd ~/log"
 alias cdt="cd /tmp"
 # bash
 alias sb='source ~/.bashrc'
