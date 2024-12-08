@@ -20,13 +20,12 @@ logfile "$HOME/log/sc/screen.log"
 #  %? %: %? 挟まれたどっちかを表示
 #  %-w %+w 前後windowの表示
 #  %{-} 色設定を前に戻す
-#
 
 # caption always "%{= bw} %{= kb} %-w%{b kw}%n %t%{-}%+w %{-} %= %{=b kg} ♪%` %{=b kb} %y/%m/%d %{=b km}%c %{= bw} "
 # caption always "%{= bw} %{= kb} %-w%{b kw}%n %t%{-}%+w %{-} %= %{=b kg}%{=b kb} %y/%m/%d %{=b km}%c %{= bw} "
 caption always "%{= kw} %{= kb} %-w%{b kw}%n %t%{-}%+w %{-} %= %{=b kg}%{=b kb} %y/%m/%d %{=b km}%c %{= kw} "
 # hardstatus alwayslastline "%{= kw} %=%{=b kg}%` %{=b kb}%y/%m/%d %{=b km}%c "
-backtick 0 0 0 tail -f /tmp/mp3info
+#backtick 0 0 0 tail -f /tmp/mp3info
 
 # --- keybind --- 
 bind n screen
