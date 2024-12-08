@@ -9,7 +9,7 @@ dotfiles
 Clone及びVundleの取込
 
     git clone https://github.com/sousu/dotfiles.git
-    git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
+    cd ~/dotfiles && git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
 
 
 ## 個別設定
@@ -26,11 +26,6 @@ Clone及びVundleの取込
     rm ~/.bashrc ; ln -s ~/dotfiles/bash/.bashrc ~/.bashrc ; source ~/.bashrc
     rm ~/.bash_profile ; ln -s ~/dotfiles/bash/.bash_profile ~/.bash_profile
 
-Screen他の準備
-
-    ln -s ~/dotfiles/bash/.screenrc ~/.screenrc
-    ln -s ~/dotfiles/bash/.dir_colors ~/.dir_colors
-
 ### Vim
 
 vimrc及び関連フォルダの準備
@@ -41,6 +36,10 @@ vimrc及び関連フォルダの準備
 Vimを起動してVundleからplugin等インストール
 
     :BundleInstall
+
+### Misc
+
+    ln -s ~/dotfiles/bash/.screenrc ~/.screenrc
 
 ### Git
 
