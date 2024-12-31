@@ -14,7 +14,7 @@ shelltitle "$ |bash"
 termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 term xterm-256color
 deflog on
-logfile "$HOME/log/sc/screen.log"
+logfile "$HOME/log/screen.log"
 
 # --- caption/hardstatus --- 
 #  %? %: %? 挟まれたどっちかを表示
