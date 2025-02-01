@@ -6,8 +6,8 @@
 \echo "---"
 \w
 \echo ""
-\df -Th | sed -e '1d' | grep -v "100%"
-\echo ""
+#\df -Th | sed -e '1d' | grep -v "100%"
+#\echo ""
 
 # --- base ---
 if [ -f /etc/bashrc ]; then
