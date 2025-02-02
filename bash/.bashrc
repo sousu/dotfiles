@@ -6,8 +6,8 @@
 \echo "---"
 \w
 \echo ""
-\df -Th | sed -e '1d' | grep -v "100%"
-\echo ""
+#\df -Th | sed -e '1d' | grep -v "100%"
+#\echo ""
 
 # --- base ---
 if [ -f /etc/bashrc ]; then
@@ -162,5 +162,20 @@ function au {
     sep "autoremove & clean" && sudo apt-get autoremove && sudo apt-get clean
     echo ""
 }
+
+# --- docker ---
+alias cdp='cd ~/pose'
+alias dls="docker container ls -a && echo '' && docker image ls"
+alias dsh="docker container exec -it"
+
+alias dp="docker compose"
+alias dpup="docker compose up -d && sleep 2 && docker compose logs -f --tail=40"
+alias dpdown='docker compose down'
+function dpres() {
+  docker compose restart $1 && sleep 3 && docker compose logs --tail=10
+}
+alias dpinit='docker compose down && sleep 2 && docker compose up -d && sleep 2 && docker compose logs -f --tail=40'
+alias dplog='docker compose logs --tail=30'
+alias dplogf='docker compose logs -f --tail=30'
 
 
