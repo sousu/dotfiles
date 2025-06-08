@@ -9,10 +9,14 @@
 #\df -Th | sed -e '1d' | grep -v "100%"
 #\echo ""
 
+# --- backup ---
+\cp -f ~/.bash_history ~/.bash_history_save
+
 # --- base ---
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+
 
 # ŠÂ‹«•Ï”
 PATH=$PATH:$HOME/bin:.
