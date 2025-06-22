@@ -471,4 +471,7 @@ let g:go_fmt_autosave = 0
 let g:go_fmt_command = "gofmt"
 let g:go_disable_autoinstall = 1
 
+"---json---
+autocmd Filetype json setl conceallevel=0
+
 
