@@ -146,5 +146,4 @@ endif
 
 # --- 完了報告 ---
 echo === nya config load complete! ===
-echo 
 
