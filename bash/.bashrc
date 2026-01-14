@@ -173,6 +173,7 @@ alias dls="docker container ls -a && echo '' && docker image ls"
 alias dsh="docker container exec -it"
 
 alias dp="docker compose"
+alias dpbuild="docker compose build"
 alias dpup="docker compose up -d && sleep 2 && docker compose logs -f --tail=40"
 alias dpdown='docker compose down'
 function dpres() {
