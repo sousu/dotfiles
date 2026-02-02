@@ -48,7 +48,8 @@ Bundle 'ruby.vim'
 Bundle 'savevers.vim'
 Bundle 'surround.vim'
 Bundle 'bufferlist.vim'
-Bundle 'Markdown'
+"Bundle 'Markdown'
+"Bundle 'gabrielelana/vim-markdown'
 Bundle 'smartchr'
 Bundle 'yanktmp.vim'
 Bundle 'mrkn256.vim'
@@ -266,13 +267,11 @@ nmap ,b :e $BASEPATH/vimtmp<CR>
 " ============================================
 " For plugin --- 
 " --------------------------------------------
-" --- jslint ---
-"autocmd FileType javascript call s:javascript_filetype_settings()
-"function! s:javascript_filetype_settings()
-"  "ifenautocmd BufLeave     <buffer> call jslint#clear()
-"  "ifenautocmd BufWritePost <buffer> call jslint#check()
-"  "ifenautocmd CursorMoved  <buffer> call jslint#message()
-"endfunction
+" --- markdown ---
+let g:markdown_syntax_conceal = 0
+
+"---json---
+autocmd Filetype json setl conceallevel=0
 
 " --- yanktmp ---
 let g:yanktmp_file = $BASEPATH . '/vimtmp/.__yanktmp__'
@@ -442,21 +441,10 @@ nmap <Esc><Esc> :nohlsearch<cr><Plug>(anzu-clear-search-status)
 let g:BufferListWidth = 40
 let g:BufferListMaxWidth = 60
 
-" --- minibufexpl ---
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBuffs = 1
-
 " --- bufftabs ---
 let g:buftabs_only_basename=1 "ファイル名だけ表示
 "let g:buftabs_in_statusline=0 
 let g:buftabs_active_highlight_group="Visual"
-
-" --- codic-vim ---
-"nmap .c :Codic 
-
-" --- googlesuggest --- 
-"let g:googlesuggest_language = 'en'
 
 " --- go-lang ---
 if !exists('g:neocomplete#omni_patterns')
@@ -471,7 +459,5 @@ let g:go_fmt_autosave = 0
 let g:go_fmt_command = "gofmt"
 let g:go_disable_autoinstall = 1
 
-"---json---
-autocmd Filetype json setl conceallevel=0
 
 
