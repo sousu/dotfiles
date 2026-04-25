@@ -169,7 +169,7 @@ function au {
 
 # --- docker ---
 alias cdp='cd ~/pose'
-alias dls="docker container ls -a && echo '' && docker image ls"
+alias dls="docker container ls -a && docker image ls"
 alias dsh="docker container exec -it"
 
 alias dp="docker compose"
