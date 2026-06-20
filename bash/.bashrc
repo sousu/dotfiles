@@ -33,6 +33,7 @@ PROMPT_COMMAND='share_history' #“s“xŽÀs
 shopt -s histappend
 
 # --- alias ---
+alias m='less'
 alias d='dstat -ta'
 alias t='hddtemp 2>/dev/null'
 alias ls='ls -F --color -a'
