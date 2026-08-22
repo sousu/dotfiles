@@ -81,6 +81,14 @@ function vf {
 # grep
 alias grep='grep --color'
 
+# --- AI ---
+alias ec="vim ./CLAUDE.md"
+alias ecs="vim ./.claude/settings.*"
+function c {
+  claude "$*"
+}
+alias cc="claude -c"
+
 # --- Utilä÷êî ---
 function sep { 
     SEP=" "
