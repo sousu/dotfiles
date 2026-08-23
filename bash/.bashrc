@@ -88,6 +88,7 @@ function c {
   claude "$*"
 }
 alias cc="claude -c"
+alias cr="claude -r"
 
 # --- Utilä÷êî ---
 function sep { 
