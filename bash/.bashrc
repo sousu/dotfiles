@@ -191,5 +191,6 @@ function dpres() {
 }
 alias dpinit='docker compose down && sleep 2 && docker compose up -d && sleep 2 && docker compose logs -f --tail=40'
 alias dplog='docker compose logs -f --tail=50'
+alias dppull="docker compose down && sleep 2 && docker compose pull && docker compose up -d"
 
 
