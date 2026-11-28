@@ -83,6 +83,7 @@ alias grep='grep --color'
 
 # --- AI ---
 alias ec="vim ./CLAUDE.md"
+alias ecm="vim ~/dotfiles/kata_CLAUDE.md"
 alias ecs="vim ./.claude/settings.*"
 function c {
   claude "$*"
