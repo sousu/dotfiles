@@ -18,18 +18,18 @@ if [ -f /etc/bashrc ]; then
 fi
 
 
-# ŠÂ‹«•Ï”
+# ç’°å¢ƒå¤‰æ•°
 PATH=$PATH:$HOME/bin:.
 
 PS1="[\[\033[32m\]\!\[\033[0m\] \u@\h\[\033[34m\]:\[\033[0m\]\[\033[36m\]\w\[\033[0m\]]$ "
 
-# —š—ğ‚Ì’[––ŠÔ‹¤—Lİ’è
+# å±¥æ­´ã®ç«¯æœ«é–“å…±æœ‰è¨­å®š
 function share_history {
-    history -a  # 1s’Ç‹L
-    history -c  # ’[––local‚Ì—š—ğˆê’UÁ‹
-    history -r  # —š—ğÄ“Ç‚İ‚İ
+    history -a  # 1è¡Œè¿½è¨˜
+    history -c  # ç«¯æœ«localã®å±¥æ­´ä¸€æ—¦æ¶ˆå»
+    history -r  # å±¥æ­´å†èª­ã¿è¾¼ã¿
 }
-PROMPT_COMMAND='share_history' #“s“xÀs
+PROMPT_COMMAND='share_history' #éƒ½åº¦å®Ÿè¡Œ
 shopt -s histappend
 
 # --- alias ---
@@ -90,14 +90,14 @@ function c {
 alias cc="claude -c"
 alias cr="claude -r"
 
-# --- UtilŠÖ” ---
+# --- Utilé–¢æ•° ---
 function sep { 
     SEP=" "
     [ "$1" = "" ] && SEP="---"
     echo -e "---$SEP$1$SEP---"
 }
 
-# --- LinuxŠÇ— ---
+# --- Linuxç®¡ç† ---
 [ `whoami` = 'root' ] && DO="" || DO="sudo"
 function s {
     [ "$1" = "" ] || [ "$2" = "" ] && return
@@ -123,7 +123,7 @@ function res {
     $DO systemctl status $1
 }
 
-# --- VerŠÇ— ---
+# --- Verç®¡ç† ---
 # Mercurial
 function hgh {
     hg help -v $1 | less
@@ -167,7 +167,7 @@ alias gtp="git push origin"
 alias gtr="git rm --cached"
 alias gtR="git rm"
 
-# --- pkgŠÇ— ---
+# --- pkgç®¡ç† ---
 # apt
 alias a="sudo apt"
 function au {  
