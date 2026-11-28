@@ -9,7 +9,7 @@ dotfiles
 Clone及びVundleの取込
 
     git clone https://github.com/sousu/dotfiles.git
-    cd ~/dotfiles && git submodule add http://github.com/gmarik/vundle.git ~/dotfiles/vim/vundle.git
+    cd ~/dotfiles && git submodule add https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/vim/vundle.git
 
 
 ## 個別設定
