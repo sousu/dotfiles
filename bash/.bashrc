@@ -89,6 +89,10 @@ function c {
 }
 alias cc="claude -c"
 alias cr="claude -r"
+function cinit {
+  [ -e ./CLAUDE.md ] && { echo "CLAUDE.md already exists"; return 1; }
+  cp -p ~/dotfiles/kata_CLAUDE.md ./CLAUDE.md && mkdir -p ./_backup && echo "CLAUDE.md, _backup/ created"
+}
 
 # --- Util関数 ---
 function sep { 
